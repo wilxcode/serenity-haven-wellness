@@ -42,7 +42,7 @@ const MobileMenu = () => {
       </Button>
       <div
         data-open={isOpen}
-        className="fixed inset-0 bg-background/50 backdrop-blur-sm z-50 translate-x-[125%] data-[open=true]:translate-x-0 transition-transform duration-150 ease-linear p-4"
+        className="fixed inset-0 bg-foreground/50 backdrop-blur-md z-50 translate-x-[125%] data-[open=true]:translate-x-0 transition-transform duration-200 ease-linear p-4 md:p-6"
       >
         <div className="h-80 rounded-3xl flex flex-col gap-4 p-4 border bg-background">
           <Button
@@ -62,7 +62,7 @@ const MobileMenu = () => {
 
 const Header = () => {
   return (
-    <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-6 lg:px-8">
+    <header className="mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-6 lg:px-8">
       <Logo color="default" link={true} />
       <div className="hidden lg:block">
         <NavLinks />

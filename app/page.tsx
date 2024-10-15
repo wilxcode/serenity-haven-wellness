@@ -12,9 +12,9 @@ import Testimonials from '@/components/testimonials'
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Header />
-      <div className="*:py-32">
+      <div className="xl:*:py-32 md:*:py-24 *:py-16">
         <Hero />
         <Stats />
         <OurServices />
@@ -26,6 +26,6 @@ export default function Home() {
         <Cta />
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
