@@ -5,6 +5,8 @@ import Logo from './logo'
 import { Button } from './ui/button'
 import { useState } from 'react'
 import { AlignRight, X } from 'lucide-react'
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
+import { Separator } from './ui/separator'
 
 const NavLinks = () => {
   const links = [
@@ -44,17 +46,27 @@ const MobileMenu = () => {
         data-open={isOpen}
         className="fixed inset-0 bg-foreground/50 backdrop-blur-md z-50 translate-x-[125%] data-[open=true]:translate-x-0 transition-transform duration-200 ease-linear p-4 md:p-6"
       >
-        <div className="h-80 rounded-3xl flex flex-col gap-4 p-4 border bg-background">
-          <Button
-            variant={'outline'}
-            className="gap-2 self-end"
-            onClick={() => setIsOpen(false)}
-          >
-            <span>Close</span>
-            <X size={16} />
-          </Button>
-          <NavLinks />
-        </div>
+        <Card className="rounded-3xl">
+          <CardHeader>
+            <Button
+              variant={'outline'}
+              className="gap-2 self-end"
+              onClick={() => setIsOpen(false)}
+            >
+              <span>Close</span>
+              <X size={16} />
+            </Button>
+          </CardHeader>
+          <CardContent className='flex flex-col gap-6'>
+            <NavLinks />
+            <Separator />
+          </CardContent>
+          <CardFooter>
+            <Button variant={'secondary'} size={'lg'} className="font-bold">
+              Contact Us
+            </Button>
+          </CardFooter>
+        </Card>
       </div>
     </div>
   )

@@ -25,7 +25,7 @@ const Hero = () => {
           Book an Appointment
         </Button>
       </div>
-      <div className="flex items-center justify-between gap-4 max-w-3xl w-full mx-auto *:*:rounded-3xl">
+      <div className="flex items-center justify-between gap-4 max-w-3xl w-full mx-auto *:*:rounded-2xl">
         {images.map((image, index) => (
           <div key={index}>
             <Image
