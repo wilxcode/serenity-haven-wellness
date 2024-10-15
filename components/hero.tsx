@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
+import BlurFade from './ui/blur-fade'
+import { cn } from '@/lib/utils'
 
 const Hero = () => {
   const images = [
@@ -25,18 +27,18 @@ const Hero = () => {
           Book an Appointment
         </Button>
       </div>
-      <div className="flex items-center justify-between gap-4 max-w-3xl w-full mx-auto *:*:rounded-2xl">
+      <div className="flex items-center justify-between sm:gap-8 gap-4 max-w-3xl w-full mx-auto *:*:rounded-2xl">
         {images.map((image, index) => (
-          <div key={index}>
+          <BlurFade key={image.src} delay={0.25 + index * 0.05} inView>
             <Image
               src={image.src}
               alt={image.alt}
               width={176}
               height={178}
-              className="size-auto"
+              className={cn("size-auto", index % 2 === 0 ? 'rotate-3' : '-rotate-3')}
               priority={true}
             />
-          </div>
+          </BlurFade>
         ))}
       </div>
     </div>

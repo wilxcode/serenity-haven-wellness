@@ -6,7 +6,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel'
+} from './ui/carousel'
+import { FadeText } from './ui/fade-text'
 
 const teamMembers = [
   {
@@ -157,14 +158,24 @@ const AboutUs = () => {
         <span className="text-sm font-bold text-primary">Meet Our Team</span>
         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-1 gap-4 gap-y-4">
           <div className="xl:max-w-[30.75rem]">
-            <h2 className="xl:text-5xl md:text-3xl text-2xl font-bold">
-              Compassionate, Experienced, and Ready to Support You
-            </h2>
+            <FadeText
+              className="xl:text-5xl md:text-3xl text-2xl font-bold"
+              direction="up"
+              framerProps={{
+                show: { transition: { delay: 0.25 } },
+              }}
+              text="Compassionate, Experienced, and Ready to Support You"
+            />
           </div>
           <div className="xl:max-w-[37.75rem]">
-            <p className="xl:text-2xl md:text-xl text-lg text-accent-foreground">
-              {`Our team of licensed therapists and mental health professionals bring a wealth of knowledge and empathy to guide you on your wellness journey.`}
-            </p>
+            <FadeText
+              className="xl:text-2xl md:text-xl text-lg text-accent-foreground"
+              direction="up"
+              framerProps={{
+                show: { transition: { delay: 0.35 } },
+              }}
+              text="Our team of licensed therapists and mental health professionals bring a wealth of knowledge and empathy to guide you on your wellness journey."
+            />
           </div>
         </div>
       </div>

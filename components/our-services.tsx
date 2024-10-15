@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
+import { FadeText } from './ui/fade-text'
 
 const OurServices = () => {
   return (
@@ -11,19 +12,29 @@ const OurServices = () => {
       <div className="flex flex-col gap-4 max-w-[41.75rem]">
         <div>
           <span className="text-sm font-bold text-primary">What We Offer</span>
-          <h2 className="xl:text-5xl md:text-3xl text-2xl font-bold">
-            Explore Our Comprehensive Wellness Services
-          </h2>
+          <FadeText
+            className="xl:text-5xl md:text-3xl text-2xl font-bold"
+            direction="up"
+            framerProps={{
+              show: { transition: { delay: 0.25 } },
+            }}
+            text="Explore Our Comprehensive Wellness Services"
+          />
         </div>
         <div>
-          <p className="xl:text-2xl md:text-xl text-lg text-accent-foreground">
-            {`We believe mental health is a journey, and every journey deserves
-            personalized guidance.`}
-          </p>
+          <FadeText
+            className="xl:text-2xl md:text-xl text-lg text-accent-foreground"
+            direction="up"
+            framerProps={{
+              show: { transition: { delay: 0.35 } },
+            }}
+            text="We believe mental health is a journey, and every journey deserves
+            personalized guidance."
+          />
         </div>
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-8 *:w-full *:flex-1 *:border-none *:min-h-72 *:flex *:flex-col *:justify-between">
-        <Card className="bg-primary/10">
+        <Card className="bg-primary/10 hover:rotate-3 rotate-0 transition-transform duration-200 ease-in-out">
           <CardHeader>
             <CardTitle className="xl:text-3xl text-2xl">
               Personalized Mental <br /> Health Plans
@@ -49,7 +60,7 @@ const OurServices = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-primary/55">
+        <Card className="bg-primary/55 hover:rotate-3 rotate-0 transition-transform duration-200 ease-in-out">
           <CardHeader>
             <CardTitle className="xl:text-3xl text-2xl">
               Compassionate & <br /> Qualified Professionals
@@ -75,7 +86,7 @@ const OurServices = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-secondary/40">
+        <Card className="bg-secondary/40 hover:rotate-3 rotate-0 transition-transform duration-200 ease-in-out">
           <CardHeader>
             <CardTitle className="xl:text-3xl text-2xl">
               Holistic Healing <br /> Approach

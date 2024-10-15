@@ -1,3 +1,4 @@
+import { FadeText } from './ui/fade-text'
 import HeroVideoDialog from './ui/hero-video-dialog'
 import Image from 'next/image'
 
@@ -7,9 +8,14 @@ const Testimonials = () => {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 flex flex-col items-start gap-16">
         <div>
           <span className="text-sm font-bold text-primary">Testimonials</span>
-          <h2 className="xl:text-5xl md:text-3xl text-2xl font-bold">
-            What Our Clients Say
-          </h2>
+          <FadeText
+            className="xl:text-5xl md:text-3xl text-2xl font-bold"
+            direction="up"
+            framerProps={{
+              show: { transition: { delay: 0.25 } },
+            }}
+            text="What Our Clients Say"
+          />
         </div>
         <div className="flex flex-col sm:flex-row items-start justify-between *:flex-1 gap-16">
           <HeroVideoDialog
