@@ -3,12 +3,16 @@
 import Link from 'next/link'
 import Logo from './logo'
 import { Button } from './ui/button'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { AlignRight, X } from 'lucide-react'
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
 import { Separator } from './ui/separator'
 
-const NavLinks = () => {
+type NavLinksProps = {
+  setIsOpen?: Dispatch<SetStateAction<boolean>>
+}
+
+const NavLinks = (props: NavLinksProps) => {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/#about', label: 'About' },
@@ -19,7 +23,7 @@ const NavLinks = () => {
   return (
     <ul className="flex flex-col lg:flex-row list-none lg:items-center items-start gap-8">
       {links.map((link) => (
-        <li key={link.href}>
+        <li key={link.href} onClick={() => props.setIsOpen?.(false)}>
           <Link href={link.href} className="underline-offset-4 hover:underline">
             {link.label}
           </Link>
@@ -57,8 +61,8 @@ const MobileMenu = () => {
               <X size={16} />
             </Button>
           </CardHeader>
-          <CardContent className='flex flex-col gap-6'>
-            <NavLinks />
+          <CardContent className="flex flex-col gap-6">
+            <NavLinks setIsOpen={setIsOpen} />
             <Separator />
           </CardContent>
           <CardFooter>
