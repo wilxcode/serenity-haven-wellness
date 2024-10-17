@@ -36,15 +36,17 @@ type LinkListProps = {
 const LinkList = (props: LinkListProps) => (
   <div>
     <h5 className="text-lg font-bold">{props.title}</h5>
-    <ul className="list-none flex flex-col gap-2">
-      {props.links.map((link, index) => (
-        <li key={index}>
-          <Link href={link.href} className="underline-offset-4 hover:underline">
-            {link.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <nav>
+      <ul className="list-none flex flex-col gap-2">
+        {props.links.map((link, index) => (
+          <li key={index}>
+            <Link href={link.href} className="underline-offset-4 hover:underline">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 )
 

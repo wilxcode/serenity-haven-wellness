@@ -21,15 +21,17 @@ const NavLinks = (props: NavLinksProps) => {
   ]
 
   return (
-    <ul className="flex flex-col lg:flex-row list-none lg:items-center items-start gap-8">
-      {links.map((link) => (
-        <li key={link.href} onClick={() => props.setIsOpen?.(false)}>
-          <Link href={link.href} className="underline-offset-4 hover:underline">
-            {link.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <nav>
+      <ul className="flex flex-col lg:flex-row list-none lg:items-center items-start gap-8">
+        {links.map((link) => (
+          <li key={link.href} onClick={() => props.setIsOpen?.(false)}>
+            <Link href={link.href} className="underline-offset-4 hover:underline">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
 
